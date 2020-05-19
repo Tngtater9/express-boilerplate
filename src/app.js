@@ -1,4 +1,4 @@
-require('dotenv').config;
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 
 app.use((error, req, res, next) => {
     let response
-    if(NODE_ENV = "production") {
+    if(NODE_ENV === "production") {
         response =  {error: {message: 'server error'}};
     } else {
         console.error(error);
